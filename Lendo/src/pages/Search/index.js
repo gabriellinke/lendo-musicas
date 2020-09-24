@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { View, Text, Image, TextInput,  } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage'
+
 import LinearGradient from 'react-native-linear-gradient';
 import logo from '../../assets/logo.png';
 import search from '../../assets/search.png';
 
+import api from '../../services/api'
 import styles from './styles';
 
 function Search()
@@ -14,11 +17,25 @@ function Search()
     const [artist, setArtist] = useState('');
     const [song, setSong] = useState('');
 
-    function handleSearch()
+    async function handleSearch()
     {
+        await AsyncStorage.setItem('@artist', artist);
+        await AsyncStorage.setItem('@song', song);
         console.log(artist);
         console.log(song);
-        navigate('NotFound');
+        if(artist !== '' && song !== '')
+            api.get(`${artist}/${song}`)
+                .then(async (response) => {
+                    console.log(response.data);
+                    if(response.data.lyrics !== "")
+                    {
+                        await AsyncStorage.setItem('@lyrics', response.data.lyrics);
+                        console.log(response.data.lyrics);
+                        navigate('SearchResult');
+                    }
+                    else
+                        navigate('NotFound');
+                })
     }
 
     return(

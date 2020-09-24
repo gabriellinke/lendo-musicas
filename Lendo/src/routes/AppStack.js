@@ -13,9 +13,9 @@ function AppStack()
     return(
         <NavigationContainer>
             <Navigator screenOptions={{headerShown: false}}>
-                {/* <Screen name="Search" component={Search} />
+                <Screen name="Search" component={Search} />
                 <Screen name="NotFound" component={SearchMusicNotFound} />
-                <Screen name="SearchResult" component={SearchResult} /> */}
+                <Screen name="SearchResult" component={SearchResult} />
                 <Screen name="Result" component={Result} />
             </Navigator>
         </NavigationContainer>
