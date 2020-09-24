@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput,  } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import logo from '../../assets/logo.png';
 import search from '../../assets/search.png';
@@ -9,6 +10,7 @@ import styles from './styles';
 
 function Search()
 {
+    const { navigate } = useNavigation();
     const [artist, setArtist] = useState('');
     const [song, setSong] = useState('');
 
@@ -16,6 +18,7 @@ function Search()
     {
         console.log(artist);
         console.log(song);
+        navigate('NotFound');
     }
 
     return(

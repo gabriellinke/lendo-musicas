@@ -12,35 +12,28 @@ const styles = StyleSheet.create({
     },
     title: {
         marginTop: 49,
-
         fontSize: 24,
         fontWeight: '700',
         lineHeight: 33,
         alignContent: 'center',
-        color: '#FFFFFF'
-    },
-    label: {
-        fontSize: 16,
         color: '#FFFFFF',
-        fontWeight: '700',
-        lineHeight: 22,
     },
-    input: {
+    mainText: {
         fontSize: 16,
-        color: '#828282',
-        fontWeight: '400',
-    },
-    inputBlock: {
-        height: 59,
-        borderBottomWidth: 1,
-        borderColor: '#ffffff',
-        width: 276,
-        
-        marginTop: 50,
+        lineHeight: 22,
+        color: '#FFFFFF',
+        alignContent: 'center',
+        paddingHorizontal: 43,
+        marginTop: 40,
     },
     button: {
-        marginTop: 50,
+        marginTop: 40,
     },
+    notFoundImage: {
+        width: 220,
+        height: 150,
+        marginTop: 40,
+    }
 
 });
 
