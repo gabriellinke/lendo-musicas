@@ -13,11 +13,11 @@ import styles from './styles';
 
 function Search()
 {
-    const [artist, setArtist] = useState('');
-    const [song, setSong] = useState('');
+    const [artist, setArtist] = useState(''); // Armazena o nome do artista
+    const [song, setSong] = useState(''); // Armazena o nome da música
     const { navigate } = useNavigation();
 
-    useEffect(() => {
+    useEffect(() => { // Recupera os dados de artista e música do async storage
         async function recoverData()
         {
             const storagedArtist = await AsyncStorage.getItem('@artist')
@@ -34,7 +34,7 @@ function Search()
         navigate('Search');
     }
 
-    function handleGoToResult()
+    function handleGoToResult() // Vai para a página com a letra da música
     {
         navigate('Result');
     }

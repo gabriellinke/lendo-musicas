@@ -11,6 +11,7 @@ const { Navigator, Screen } = createStackNavigator();
 function AppStack()
 {
     return(
+        // Navegação em pilha pelas telas
         <NavigationContainer>
             <Navigator screenOptions={{headerShown: false}}>
                 <Screen name="Search" component={Search} />

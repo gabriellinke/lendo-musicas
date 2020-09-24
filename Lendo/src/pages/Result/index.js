@@ -12,12 +12,12 @@ import styles from './styles';
 
 function Search()
 {
-    const [artist, setArtist] = useState('');
-    const [song, setSong] = useState('');
+    const [artist, setArtist] = useState(''); // Armazena o nome do artista
+    const [song, setSong] = useState(''); // Armazena o nome da música
     const [lyric, setLyric] = useState('');
     const { navigate, goBack } = useNavigation();
 
-    useEffect(() => {
+    useEffect(() => {  // Recupera os dados do async storage
         async function recoverData()
         {
             const storagedArtist = await AsyncStorage.getItem('@artist')
@@ -36,7 +36,7 @@ function Search()
         navigate('Search');
     }
     
-    function handleNavigateBack()
+    function handleNavigateBack() // Volta para a página de informações da música
     {
         goBack();
     }
