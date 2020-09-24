@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, Image } from 'react-native';
+import { Text, Image, ImageBackground, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
-import notFound from '../../assets/notFound.png';
+import imagemTeste from '../../assets/imagemTeste.png';
 import logo from '../../assets/logo.png';
 import newSearch from '../../assets/newSearch.png';
 
@@ -20,12 +20,19 @@ function Search()
     return(
         <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
             <Image source={logo} style={styles.logo}/>
-            <Text style={styles.title}>Letra não encontrada</Text>
+            <Text style={styles.title}>Letra encontrada</Text>
 
-            <Image source={notFound} style={styles.notFoundImage}/>
+            <ImageBackground source={imagemTeste} style={styles.musicImage}>
+                <View style={styles.opacity}>
+                    <View style={styles.music}>
+                        <Text style={styles.artist}>Elis Regina</Text>
+                        <Text style={styles.song}>O bêbado e o equilibrista</Text>
+                    </View>
+                </View>
+            </ImageBackground>
 
             <Text style={styles.mainText}>
-                Essa música ainda não foi escrita, mas não fique triste, você pode acessar milhares de músicas realizando uma nova busca &lt;3
+                Não encontrou o que {`\n`} procurava?
             </Text>
 
             <RectButton onPress={handleSearch} style={styles.button}>

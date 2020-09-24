@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '700',
         lineHeight: 33,
-        alignContent: 'center',
+        textAlign: 'center',
         color: '#FFFFFF'
     },
     label: {
