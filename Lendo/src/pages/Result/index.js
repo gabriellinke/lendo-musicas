@@ -17,8 +17,8 @@ function Search()
     const [lyric, setLyric] = useState('');
     const { navigate, goBack } = useNavigation();
 
-    useEffect(() => {  // Recupera os dados do async storage
-        async function recoverData()
+    useEffect(() => {  // Recupera os dados do async storage / Salva a nova música no histórico
+        async function recoverDataAndSave()
         {
             const storagedArtist = await AsyncStorage.getItem('@artist')
             const storagedSong = await AsyncStorage.getItem('@song')
@@ -26,9 +26,33 @@ function Search()
             setArtist(storagedArtist);
             setSong(storagedSong);
             setLyric(storagedLyric);
+
+            // Salva os dados no histórico
+            if(storagedArtist !== "" && storagedSong !== "" )
+            {
+                let musics = [];
+                    let historic = await AsyncStorage.getItem('@musics');   // Recupera o histórico
+                    if(historic)
+                        musics = JSON.parse(historic);
+
+                    if(musics.length > 0)   // Verifica se a música já está no histórico
+                        for(let music of musics)
+                        {
+                            if(storagedArtist === music.artist && storagedSong === music.song)
+                                return;
+                        }
+    
+                    /* Adiciona um novo valor no array criado */
+                    musics.push({artist: storagedArtist, song: storagedSong});
+                    if(musics.length > 10)  // Se tiver mais de 10 itens no histórico remove o mais antigo
+                        musics.shift();
+    
+                    // /* Salva o item */
+                    await AsyncStorage.setItem("@musics", JSON.stringify(musics))
+            }
         }
 
-        recoverData();
+        recoverDataAndSave();
     }, [])
 
     function handleSearch() // Volta para a página inicial

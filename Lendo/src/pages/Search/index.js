@@ -39,6 +39,11 @@ function Search()
                 })
     }
 
+    function handleHistoric()
+    {
+        navigate('Historic');
+    }
+
     return(
         <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
             <Image source={logo} style={styles.logo}/>
@@ -65,8 +70,15 @@ function Search()
                 />
             </View>
 
+
             <RectButton onPress={handleSearch} style={styles.button}>
                 <Image source={search} style={styles.search}/>
+            </RectButton>
+
+            <RectButton onPress={handleHistoric}>
+                <View style={styles.historicButton}>
+                    <Text style={styles.historicButtonText}>Histórico de buscas</Text>
+                </View>
             </RectButton>
         </LinearGradient>
     );

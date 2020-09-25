@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
     linearGradient: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom: 40,
     },
     logo: {
         width: 232,
@@ -12,6 +13,7 @@ const styles = StyleSheet.create({
     },
     title: {
         marginTop: 49,
+        marginBottom: 30,
 
         fontSize: 24,
         fontWeight: '700',
@@ -19,26 +21,36 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#FFFFFF'
     },
-    label: {
+    artist: {
         fontSize: 16,
+        lineHeight: 22,
         color: '#FFFFFF',
         fontWeight: '700',
-        lineHeight: 22,
     },
-    input: {
+    song: {
         fontSize: 16,
-        color: '#828282',
+        lineHeight: 22,
+        color: '#FFFFFF',
         fontWeight: '400',
     },
-    inputBlock: {
-        height: 59,
-        borderBottomWidth: 1,
+    music: {
+        borderWidth: 1,
         borderColor: '#ffffff',
         width: 276,
+        padding: 10,
         
-        marginTop: 50,
+        marginTop: 20,
     },
-    historicButton: {
+    message: {
+        paddingHorizontal: 43,
+        fontSize: 16,
+        lineHeight: 22,
+        color: '#FFFFFF',
+        fontWeight: '400',
+        marginTop: 80,
+        marginBottom: 40,
+    },
+    clearButton: {
         marginTop: 40,
         borderWidth: 1,
         borderColor: '#FFB703',
@@ -48,13 +60,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    historicButtonText: {
+    clearButtonText: {
         color: '#FFB703',
         fontWeight: '700',
         fontSize: 17
     },
     button: {
-        marginTop: 50,
+        marginTop: 40,
     },
 
 });
