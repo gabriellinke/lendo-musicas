@@ -5,9 +5,9 @@ import { RectButton } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
 
-import imagemTeste from '../../assets/imagemTeste.png';
-import logo from '../../assets/logo.png';
-import newSearch from '../../assets/newSearch.png';
+import imagemMusica from '../../assets/musica.jpg';
+import Logo from '../../assets/logo.svg';
+import NewSearch from '../../assets/newSearch.svg';
 
 import styles from './styles';
 
@@ -41,11 +41,11 @@ function Search()
 
     return(
         <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
-            <Image source={logo} style={styles.logo}/>
+            <Logo style={styles.logo}/>
             <Text style={styles.title}>Letra encontrada</Text>
 
             <RectButton onPress={handleGoToResult}>
-                <ImageBackground source={imagemTeste} style={styles.musicImage}>
+                <ImageBackground source={imagemMusica} style={styles.musicImage}>
                     <View style={styles.opacity}>
                         <View style={styles.music}>
                             <Text style={styles.artist}>{artist}</Text>
@@ -60,7 +60,7 @@ function Search()
             </Text>
 
             <RectButton onPress={handleSearch} style={styles.button}>
-                <Image source={newSearch} style={styles.search}/>
+                <NewSearch style={styles.search}/>
             </RectButton>
         </LinearGradient>
     );

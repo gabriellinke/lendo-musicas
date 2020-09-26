@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TextInput,  } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
 
-import logo from '../../assets/logo.png';
-import search from '../../assets/search.png';
+import Logo from '../../assets/logo.svg';
+import SearchButton from '../../assets/search.svg';
 
 import api from '../../services/api'
 import styles from './styles';
@@ -46,7 +46,7 @@ function Search()
 
     return(
         <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
-            <Image source={logo} style={styles.logo}/>
+            <Logo style={styles.logo}/>
             <Text style={styles.title}>Buscar letra</Text>
 
             <View style={styles.inputBlock}>
@@ -72,7 +72,7 @@ function Search()
 
 
             <RectButton onPress={handleSearch} style={styles.button}>
-                <Image source={search} style={styles.search}/>
+                <SearchButton style={styles.search}/>
             </RectButton>
 
             <RectButton onPress={handleHistoric}>

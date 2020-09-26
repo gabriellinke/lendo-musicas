@@ -5,8 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
 
-import logo from '../../assets/logo.png';
-import newSearch from '../../assets/newSearch.png';
+import Logo from '../../assets/logo.svg';
+import NewSearch from '../../assets/newSearch.svg';
 
 import styles from './styles';
 
@@ -15,7 +15,7 @@ function Search()
     const { navigate, goBack } = useNavigation();
     const [musics, setMusics] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => {   // Acessa o histórico
         async function recoverHistoric()
         {
             let historic = [];
@@ -28,7 +28,7 @@ function Search()
         recoverHistoric();
     }, [])
 
-    function handleBack()   
+    function handleBack()   // Redireciona para a página anterior
     {
        goBack();
     }
@@ -39,7 +39,7 @@ function Search()
         navigate('Search');
     }
 
-    function show()
+    function show() // Mostra os itens do histórico
     {
         if(musics.length > 0)
             return musics.reverse().map((music, indice) => {
@@ -60,7 +60,7 @@ function Search()
                 flexGrow: 1
         }}>
             <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
-                <Image source={logo} style={styles.logo}/>
+                <Logo style={styles.logo}/>
                 <Text style={styles.title}>Últimas buscas</Text>
 
                 {show()}
@@ -72,7 +72,7 @@ function Search()
                 </RectButton>
 
                 <RectButton onPress={handleBack} style={styles.button}>
-                    <Image source={newSearch} style={styles.search}/>
+                    <NewSearch style={styles.search}/>
                 </RectButton>
             </LinearGradient>
         </ScrollView>

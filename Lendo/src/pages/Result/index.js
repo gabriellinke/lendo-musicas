@@ -4,9 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 import { RectButton, BorderlessButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage'
 
-import backButton from '../../assets/goBack.png';
-import logo from '../../assets/logo2.png';
-import newSearch from '../../assets/newSearch2.png';
+import BackButton from '../../assets/goBack.svg';
+import Logo from '../../assets/logo2.svg';
+import NewSearch from '../../assets/newSearch2.svg';
 
 import styles from './styles';
 
@@ -74,10 +74,10 @@ function Search()
                 flexGrow: 1,
         }}>
             <BorderlessButton onPress={handleSearch}>
-                <Image source={logo} style={styles.logo}/>
+                <Logo style={styles.logo}/>
             </BorderlessButton>
             <BorderlessButton onPress={handleNavigateBack}>
-                <Image source={backButton} style={styles.back}/>
+                <BackButton style={styles.back}/>
             </BorderlessButton>
 
             <View style={styles.text}>
@@ -88,7 +88,7 @@ function Search()
             </View>
 
             <RectButton onPress={handleSearch} style={styles.button}>
-                <Image source={newSearch} style={styles.search}/>
+                <NewSearch style={styles.search}/>
             </RectButton>
         </ScrollView>
     );
