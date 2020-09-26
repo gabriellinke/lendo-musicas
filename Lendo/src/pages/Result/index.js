@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, Image, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton, BorderlessButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage'

@@ -1,9 +1,18 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    inner: {
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        flex: 1,
+        paddingBottom: 30,
+    },
     linearGradient: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     logo: {
         width: 232,
@@ -39,7 +48,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
     },
     historicButton: {
-        marginTop: 40,
+        marginTop: 10,
         borderWidth: 1,
         borderColor: '#FFB703',
         width: 274,

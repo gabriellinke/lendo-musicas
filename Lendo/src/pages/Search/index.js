@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Platform, KeyboardAvoidingView } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -46,35 +46,42 @@ function Search()
 
     return(
         <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
-            <Logo style={styles.logo}/>
-            <Text style={styles.title}>Buscar letra</Text>
+            <KeyboardAvoidingView
+                behavior={Platform.OS == "ios" ? "padding" : "height"}
+                style={styles.container}
+            >
+                <View style={styles.inner}>
+                    <Logo style={styles.logo}/>
+                    <Text style={styles.title}>Buscar letra</Text>
 
-            <View style={styles.inputBlock}>
-                <Text style={styles.label}>Artista</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder='Insira o nome do artista'
-                    placeholderTextColor='#828282'
-                    value={artist}
-                    onChangeText={text => setArtist(text)}
-                />
-            </View>             
-            <View style={styles.inputBlock}>
-                <Text style={styles.label}>Música</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder='Insira o nome da música'
-                    placeholderTextColor='#828282'
-                    value={song}
-                    onChangeText={text => setSong(text)}
-                />
-            </View>
+                    <View style={styles.inputBlock}>
+                        <Text style={styles.label}>Artista</Text>
+                        <TextInput
+                            style={styles.input}
+                            placeholder='Insira o nome do artista'
+                            placeholderTextColor='#828282'
+                            value={artist}
+                            onChangeText={text => setArtist(text)}
+                        />
+                    </View>             
+                    <View style={styles.inputBlock}>
+                        <Text style={styles.label}>Música</Text>
+                        <TextInput
+                            style={styles.input}
+                            placeholder='Insira o nome da música'
+                            placeholderTextColor='#828282'
+                            value={song}
+                            onChangeText={text => setSong(text)}
+                        />
+                    </View>
 
+                    <RectButton onPress={handleSearch} style={styles.button}>
+                        <SearchButton style={styles.search}/>
+                    </RectButton>
 
-            <RectButton onPress={handleSearch} style={styles.button}>
-                <SearchButton style={styles.search}/>
-            </RectButton>
-
+                </View>
+            </KeyboardAvoidingView>
+            
             <RectButton onPress={handleHistoric}>
                 <View style={styles.historicButton}>
                     <Text style={styles.historicButtonText}>Histórico de buscas</Text>
