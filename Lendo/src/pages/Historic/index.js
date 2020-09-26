@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage'
 import Logo from '../../assets/logo.svg';
 import NewSearch from '../../assets/newSearch.svg';
 
+import api from '../../services/api'
 import styles from './styles';
 
 function Search()
@@ -45,13 +46,37 @@ function Search()
             return musics.reverse().map((music, indice) => {
                 return(
                     <View style={styles.music} key={indice}>
-                        <Text style={styles.artist}>{music.artist}</Text>
-                        <Text style={styles.song}>{music.song}</Text>
+                        <RectButton onPress={() => handleSearch(music.artist, music.song)}>
+                            <Text style={styles.artist}>{music.artist}</Text>
+                            <Text style={styles.song}>{music.song}</Text>
+                        </RectButton>
                     </View>
                 );
             })
         else
             return (<Text style={styles.message}>Nenhuma música foi encontrada em seu histórico recente.</Text>)
+    }
+
+    async function handleSearch(artist, song)   // Consulta a letra na API
+    {
+        // Armazena o nome do artista e da música no async storage pra permitir recuperar nas próximas páginas
+        await AsyncStorage.setItem('@artist', artist);
+        await AsyncStorage.setItem('@song', song);
+        if(artist !== '' && song !== '')
+            api.get(`${artist}/${song}`)    //Faz a consulta a API, salva a letra, ou se der errado manda para a página de letra não encontrada
+                .then(async (response) => {
+                    if(response.data.lyrics !== "")
+                    {
+                        await AsyncStorage.setItem('@lyrics', response.data.lyrics);
+                        navigate('SearchResult');
+                    }
+                    else
+                        navigate('NotFound');
+                })
+                .catch(response => {
+                    console.log(response);
+                    navigate('NotFound');
+                })
     }
 
     return(
