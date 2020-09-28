@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
         paddingVertical: 13,
         flexDirection: "row",
         alignItems: 'flex-end',
-        borderRadius: 4,
     },
     artist: {
         fontSize: 16,
