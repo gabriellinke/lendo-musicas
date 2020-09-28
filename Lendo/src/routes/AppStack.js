@@ -6,7 +6,7 @@ import Search from '../pages/Search';
 import SearchResult from '../pages/SearchResult';
 import SearchMusicNotFound from '../pages/SearchMusicNotFound';
 import Result from '../pages/Result';
-import Historic from '../pages/Historic';
+import Historic from '../pages/LatestSearches';
 const { Navigator, Screen } = createStackNavigator();
 
 function AppStack()

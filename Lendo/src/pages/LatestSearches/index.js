@@ -6,12 +6,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
 
 import Logo from '../../assets/logo.svg';
-import NewSearch from '../../assets/newSearch.svg';
+import Search from '../../assets/search.svg';
 
 import api from '../../services/api'
 import styles from './styles';
 
-function Search()
+function LatestSearches()
 {
     const { navigate, goBack } = useNavigation();
     const [musics, setMusics] = useState([]);
@@ -47,8 +47,7 @@ function Search()
                 return(
                     <View style={styles.music} key={indice}>
                         <RectButton onPress={() => handleSearch(music.artist, music.song)}>
-                            <Text style={styles.artist}>{music.artist}</Text>
-                            <Text style={styles.song}>{music.song}</Text>
+                            <Text style={styles.artistSong}>{music.artist} - {music.song}</Text>
                         </RectButton>
                     </View>
                 );
@@ -86,22 +85,18 @@ function Search()
         }}>
             <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
                 <Logo style={styles.logo}/>
-                <Text style={styles.title}>Últimas buscas</Text>
+                <RectButton onPress={clearHistoric}>
+                    <Text style={styles.clearButton}>Limpar histórico X</Text>
+                </RectButton>
 
                 {show()}
 
-                <RectButton onPress={clearHistoric}>
-                    <View style={styles.clearButton}>
-                        <Text style={styles.clearButtonText}>Limpar histórico</Text>
-                    </View>
-                </RectButton>
-
                 <RectButton onPress={handleBack} style={styles.button}>
-                    <NewSearch style={styles.search}/>
+                    <Search style={styles.search}/>
                 </RectButton>
             </LinearGradient>
         </ScrollView>
     );
 }
 
-export default Search;
+export default LatestSearches;

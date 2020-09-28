@@ -10,7 +10,7 @@ import NewSearch from '../../assets/newSearch2.svg';
 
 import styles from './styles';
 
-function Search()
+function Result()
 {
     const [artist, setArtist] = useState(''); // Armazena o nome do artista
     const [song, setSong] = useState(''); // Armazena o nome da música
@@ -94,4 +94,4 @@ function Search()
     );
 }
 
-export default Search;
+export default Result;

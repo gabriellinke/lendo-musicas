@@ -10,7 +10,7 @@ import NewSearch from '../../assets/newSearch.svg';
 
 import styles from './styles';
 
-function Search()
+function SearchMusicNotFound()
 {
     const { navigate } = useNavigation();
     function handleSearch() // Volta para a página inicial
@@ -36,4 +36,4 @@ function Search()
     );
 }
 
-export default Search;
+export default SearchMusicNotFound;

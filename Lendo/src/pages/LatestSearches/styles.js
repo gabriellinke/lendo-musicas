@@ -21,25 +21,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#FFFFFF'
     },
-    artist: {
+    artistSong: {
         fontSize: 16,
         lineHeight: 22,
-        color: '#FFFFFF',
-        fontWeight: '700',
-    },
-    song: {
-        fontSize: 16,
-        lineHeight: 22,
-        color: '#FFFFFF',
+        color: '#FFB703',
         fontWeight: '400',
     },
     music: {
         borderWidth: 1,
-        borderColor: '#ffffff',
-        width: 276,
-        padding: 10,
-        
-        marginTop: 20,
+        borderColor: '#FFB703',
+        width: 274,
+        height: 50,
+        borderRadius: 4,
+        marginTop: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     message: {
         paddingHorizontal: 43,
@@ -52,18 +48,11 @@ const styles = StyleSheet.create({
     },
     clearButton: {
         marginTop: 40,
-        borderWidth: 1,
-        borderColor: '#FFB703',
-        width: 274,
-        height: 50,
-        borderRadius: 4,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    clearButtonText: {
-        color: '#FFB703',
-        fontWeight: '700',
-        fontSize: 17
+        color: '#FFFFFF',
+        fontWeight: '400',
+        fontSize: 18,
+        textAlign: 'center',
+        lineHeight: 25,
     },
     button: {
         marginTop: 40,

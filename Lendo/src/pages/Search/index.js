@@ -84,7 +84,7 @@ function Search()
             
             <RectButton onPress={handleHistoric}>
                 <View style={styles.historicButton}>
-                    <Text style={styles.historicButtonText}>Histórico de buscas</Text>
+                    <Text style={styles.historicButtonText}>Últimas buscas</Text>
                 </View>
             </RectButton>
         </LinearGradient>
