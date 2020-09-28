@@ -5,10 +5,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     inner: {
-        justifyContent: 'flex-end',
         alignItems: 'center',
         flex: 1,
-        paddingBottom: 30,
     },
     linearGradient: {
         flex: 1,
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
     },
     historicButton: {
-        marginTop: 10,
+        marginTop: 40,
         borderWidth: 1,
         borderColor: '#FFB703',
         width: 274,

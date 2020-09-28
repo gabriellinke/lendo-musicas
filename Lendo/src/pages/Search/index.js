@@ -47,8 +47,9 @@ function Search()
     return(
         <LinearGradient colors={['#023047', '#000000']} style={styles.linearGradient}>
             <KeyboardAvoidingView
-                behavior={Platform.OS == "ios" ? "padding" : "height"}
+                // behavior={Platform.OS == "ios" ? "padding" : "height"}
                 style={styles.container}
+                keyboardVerticalOffset={-70} behavior={"position"}
             >
                 <View style={styles.inner}>
                     <Logo style={styles.logo}/>
@@ -79,14 +80,14 @@ function Search()
                         <SearchButton style={styles.search}/>
                     </RectButton>
 
+                    <RectButton onPress={handleHistoric}>
+                        <View style={styles.historicButton}>
+                            <Text style={styles.historicButtonText}>Últimas buscas</Text>
+                        </View>
+                    </RectButton>
                 </View>
             </KeyboardAvoidingView>
             
-            <RectButton onPress={handleHistoric}>
-                <View style={styles.historicButton}>
-                    <Text style={styles.historicButtonText}>Últimas buscas</Text>
-                </View>
-            </RectButton>
         </LinearGradient>
     );
 }
