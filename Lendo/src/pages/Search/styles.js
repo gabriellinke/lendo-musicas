@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     },
     input: {
         fontSize: 16,
-        color: '#828282',
+        color: '#FFFFFF',
         fontWeight: '400',
     },
     inputBlock: {
@@ -62,6 +62,19 @@ const styles = StyleSheet.create({
     },
     button: {
         marginTop: 50,
+    },
+    loadingModal: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        alignItems: "center",
+        justifyContent: 'center',
+    },
+    loadingImage: {
+        width: 100,
+        height: 100,
     },
 
 });

@@ -40,22 +40,6 @@ function LatestSearches()
         navigate('Search');
     }
 
-    function show() // Mostra os itens do histórico
-    {
-        if(musics.length > 0)
-            return musics.reverse().map((music, indice) => {
-                return(
-                    <View style={styles.music} key={indice}>
-                        <RectButton onPress={() => handleSearch(music.artist, music.song)}>
-                            <Text style={styles.artistSong}>{music.artist} - {music.song}</Text>
-                        </RectButton>
-                    </View>
-                );
-            })
-        else
-            return (<Text style={styles.message}>Nenhuma música foi encontrada em seu histórico recente.</Text>)
-    }
-
     async function handleSearch(artist, song)   // Consulta a letra na API
     {
         // Armazena o nome do artista e da música no async storage pra permitir recuperar nas próximas páginas
@@ -89,7 +73,16 @@ function LatestSearches()
                     <Text style={styles.clearButton}>Limpar histórico X</Text>
                 </RectButton>
 
-                {show()}
+                {
+                    musics.reverse().map((music, indice) => {
+                        return(
+                            <View style={styles.music} key={indice}>
+                                <RectButton onPress={() => handleSearch(music.artist, music.song)}>
+                                    <Text style={styles.artistSong}>{music.artist} - {music.song}</Text>
+                                </RectButton>
+                            </View>
+                        )})
+                }
 
                 <RectButton onPress={handleBack} style={styles.button}>
                     <Search style={styles.search}/>
