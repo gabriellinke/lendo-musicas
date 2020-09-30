@@ -9,7 +9,7 @@
   Uma vez inseridos artista e música e pressionado o botão de buscar, é feita uma requisição a <a href="https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search">API</a> e a resposta é tratada. Se a letra não for encontrada, o usuário é direcionado para uma tela de erro, dizendo que a letra não foi encontrada. Do contrário, abre-se uma nova tela onde o usuário confirma se a letra encontrada é a que ele procurava. Após isso, é possível visualizar a letra da música pesquisada.
 </p>
 
-<p> O APK está anexado ao projeto, mas também pode ser baixado <a href="http://www.mediafire.com/file/13ezk1ecw00af0i/lendo-musicas.apk/file">aqui</a>.
+<p> O APK está anexado ao projeto e pode ser baixado para o uso do aplicativo.
 
 <br>
 <br>
