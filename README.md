@@ -10,7 +10,7 @@
 </p>
 
 <p> O APK está anexado ao projeto e pode ser baixado para o uso do aplicativo.
-
+  
 <br>
 <br>
 <p align="center">
@@ -19,6 +19,7 @@
 <h4 align="center">
   Figura 1: Página inicial.
 </h4>
+
 
 <br>
 <br>
@@ -61,4 +62,7 @@
  * Rodar `npm i`
  * Conectar um aparelho físico ou emulador Android
  * Rodar `npm run Android`
+ 
+ ## Versão Web
+ Este app tem uma versão web desenvolvida em React, que pode ser encontrada [aqui](https://github.com/gabriellinke/lendo-musicas-web).
  
