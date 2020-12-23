@@ -1,6 +1,10 @@
-# Lendo música
-### Este é o projeto final da formação de programadores da equipe do aplicativo NÓS.  
+<h1 align="center">
+   <img src="https://user-images.githubusercontent.com/51447706/103010091-7b96a780-4516-11eb-8677-4ca4cbe36e3f.png" />
+</h1>
 
+## :tada: Este é o projeto final da formação de programadores da equipe do aplicativo NÓS.  
+
+## :gear: Funcionamento
 <p>
   O aplicativo Lendo música é um buscador de letras de músicas desenvolvido para Android. Ao abrir o aplicativo, o usuário se depara com uma tela de buscas, onde ele pode inserir um artista e o nome de uma música e pressionar o botão buscar para pesquisar a letra dessa música. Essa tela também tem o botão de "Últimas buscas" que, ao ser pressionado, direciona o usuário a uma página listando as suas 10 últimas buscas.
  </p>
@@ -9,7 +13,11 @@
   Uma vez inseridos artista e música e pressionado o botão de buscar, é feita uma requisição a <a href="https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search">API</a> e a resposta é tratada. Se a letra não for encontrada, o usuário é direcionado para uma tela de erro, dizendo que a letra não foi encontrada. Do contrário, abre-se uma nova tela onde o usuário confirma se a letra encontrada é a que ele procurava. Após isso, é possível visualizar a letra da música pesquisada.
 </p>
 
+## :eyes: Versão demo
+
 <p> O APK está anexado ao projeto e pode ser baixado para o uso do aplicativo.
+ 
+## :camera: Imagens do app
   
 <br>
 <br>
@@ -57,12 +65,12 @@
   Figura 5: Página com as últimas buscas
 </h4>
 
-## Iniciando o projeto
+## :construction_worker: Iniciando o projeto
  * Instale a última versão de [React Native CLI](https://reactnative.dev/docs/0.8/getting-started) e suas dependências
  * Rodar `npm i`
  * Conectar um aparelho físico ou emulador Android
  * Rodar `npm run Android`
- 
- ## Versão Web
+
+ ## :computer: Versão Web
  Este app tem uma versão web desenvolvida em React, que pode ser encontrada [aqui](https://github.com/gabriellinke/lendo-musicas-web).
  
